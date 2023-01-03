@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block subtitle %}購物車{% endblock %}
+
+{% block content %}
+    {% include '_form.html' with form=form submit_text='編輯' %}
+
+    <form action="{% url 'orders:shopcar_submit' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success">下單</button>
+    </form>
+{% endblock  %}

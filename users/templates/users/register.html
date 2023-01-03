@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block subtitle %}Register{% endblock subtitle %}
+
+{% block content %}
+    <div class="row">
+        <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+            <a href="{% url 'users:login' %}" class="btn btn-outline-info float-end">登入</a>
+            <h1>Register</h1>
+            <hr>
+            {% include "_form.html" with form=form submit_text='註冊' %}
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block subtitle %}Login{% endblock subtitle %}
+
+{% block content %}
+    <div class="row">
+        <div class="col col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+            <div class="float-end">
+                <a href="{% url 'users:register' %}" class="btn btn-outline-info">註冊</a>
+                <a href="{% url 'users:password_reset' %}" class="btn btn-outline-success">忘記密碼</a>
+            </div>
+            <h1>Login</h1>
+            <hr>
+            {% include '_form.html' with form=form submit_text='登入' %}
+        </div>
+    </div>
+{% endblock content %}

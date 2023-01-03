@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block subtitle %}產品{% endblock subtitle %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            {{ product.name }} <br>
+            {{ product.description }} <br>
+
+            <a href=" {% url 'products:add_to_shopcar' product.id %}">加入購物車</a>
+        </div>
+    </div>
+{% endblock content %}

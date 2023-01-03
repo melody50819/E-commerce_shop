@@ -1,0 +1,15 @@
+{% load bootstrap5 %}
+
+<form action="{{ action | default:'' }}" method="{{ method | default:'post' }}" class="form">
+    {% if method != 'get' %}
+        {% csrf_token %}
+    {% endif %}
+
+    {% bootstrap_form form %}
+
+    {% buttons %}
+        <button type="submit" class="btn btn-{{ btn_style | default:'primary' }}">
+            {{ submit_text | default:'送出' }}
+        </button>
+    {% endbuttons %}
+</form>

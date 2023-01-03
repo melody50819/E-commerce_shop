@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block subtitle %}產品列表{% endblock subtitle %}
+
+{% block content %}
+    <div class="row">
+        {% for product in products %}
+            <div class="m-1 col-12 col-sm-6 col-md-4 col-lg-3 mb-1"> 
+                <div class="card">
+                    <div class="card-header">
+                        {{ product.name }}
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            {{ product.description | linebreaks }}
+                        </p>
+                        <p class="card-text">
+                            ${{ product.price }}
+                        </p>
+                        <a href="{% url 'products:product_detail' product.id %}" class="btn btn-primary btm-sm">詳細</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
